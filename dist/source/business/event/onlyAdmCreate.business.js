@@ -32,7 +32,7 @@ function onlyAdmCreate(event) {
                     id: event.tipo
                 }
             });
-            if (!typeEvent) { //Esse tipo de evento não foi encontrado no banco
+            if (!typeEvent) {
                 throw {
                     data: {},
                     message: createEvent_message_json_1.default.notTypeEventInDatabase,
@@ -44,7 +44,7 @@ function onlyAdmCreate(event) {
                     data: {},
                     message: createEvent_message_json_1.default.onlyAdmCanEvent,
                     statusCode: 400
-                }; // Esse tipo de evento só pode ser criado por um administrador
+                };
             }
         }
         catch (error) {

@@ -2,5 +2,6 @@
     "createEventSuccess": "Evento criado com sucesso",
     "onlyAdmCanEvent": "Apenas um administrador pode criar esse tipo de evento",
     "notTypeEventInDatabase": "Não existe esse tipo de evento no sistema",
+    "onlyOneEvent": "Não é possível criar um evento pois alguém já reservou esse horário",
     "genericError": "Houve um erro interno no servidor"
 }

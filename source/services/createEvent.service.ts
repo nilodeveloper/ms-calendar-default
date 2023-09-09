@@ -3,7 +3,7 @@ import { onlyAdmCreate } from '../business/event/onlyAdmCreate.business'
 import { onlyOneEventPerTime } from '../business/event/onlyOneEventPerTime.business'
 import createEventSuccess from '../responses/createEvent.success'
 
-export async function run(event: Event) {
+export async function run(event: Event) : Promise<IResponse>{
     try {
         await validate(event)
         const event_ = await repository.createEvent(event)

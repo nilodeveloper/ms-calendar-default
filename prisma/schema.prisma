@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url           = "postgresql://postgres:example@localhost:5432/postgres"
+}
+
+model Day {
+  id                   Int       @id @default(autoincrement())
+  feriado         Int
+  dia                 Int
+  diaSemana  Int
+  mes              Int
+  ano               Int
+  status           Int       @default(1)
+  curiosidade String
+  lua                 Int
+}
+
+model Month {
+  id                   Int       @id @default(autoincrement())
+  nome            String
+  maxDias       Int
+  status            Int @default(1)
+}
+
+model Year {
+  id                   Int       @id @default(autoincrement())
+  ano               Int
+  bissexto       Int
+  status           Int        @default(1)
+}
+
+model Horario{
+  id             Int       @id @default(autoincrement())
+  inicio       String
+  fim           String
+  idEvento Int
+}
+
+model Event {
+  id                             Int       @id @default(autoincrement())
+  dia                           Int
+  mes                         Int
+  ano                          Int 
+  idHorario                Int      
+  nome                      String
+  descricao               String
+  tipo                          Int
+  status                      Int        @default(1)
+  emailCriador          String
+  emailDonoEvento String
+  diaInteiro                Int
+}
+
+model TypeEvent {
+  id                         Int         @id @default(autoincrement())
+  nome                  String
+  descricao           String
+  onlyAdmCrate   Int         @default(0)
+  status                  Int         @default(1)
+}
